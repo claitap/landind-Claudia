@@ -1,61 +1,52 @@
 @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam:wght@400;500;700&display=swap");
-
 * {
   margin: 0;
   box-sizing: border-box;
   padding: 0;
 }
-
 :root {
-  --fuente-vietnam: "Be Vietnam", sans-serif;
+  --vietnam: "Be Vietnam", sans-serif;
   --ancho: 1440px;
   --color-naranja: hsl(12, 88%, 59%);
   --color-azul-oscuro: hsl(228, 39%, 23%);
-  --color-plomo-claro: hsl(0, 0%, 98%);
+  --plomo-claro: hsl(0, 0%, 98%);
   --color-azul-claro: hsl(227, 12%, 61%);
-  --color-rosado:hsl(13,100%,96%);
+  --color-rosado: hsl(13, 100%, 96%);
 }
-body {
-  font-family: var(--fuente-vietnam);
-  /* la imagen de fondo seccion2
-  background de abajo son para posicionar la
-  imagen a la derecha */
-  background-image: url(./../images/bg-tablet-pattern.svg);
-  background-repeat: no-repeat;
-  background-position-x:calc(100% + 100px) ;
-  background-position-y: -200px;
 
+body {
+  font-family: var(--vietnam);
+  background-image: url("./../images/bg-tablet-pattern.svg");
+  background-repeat: no-repeat;
+  background-position-x: calc(100% + 100px);
+  background-position-y: -200px;
 }
 
 .btn__started {
-    width: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .btn__started-left{
-      justify-content: flex-start;
-  }
-  .btn__started button {
-    border: none;
-    outline: none;
-    background-color: var(--color-naranja);
-    color: var(--color-plomo-claro);
-    width: 150px;
-    height: 40px;
-    border-radius: 30px;
-    box-shadow: var(--color-naranja) 0px 2px 10px;
-  }
+.btn__started-left {
+  justify-content: flex-start;
+}
 
-/* -------HEADER-------- */
-/* para hacer justify su padre tiene que ser 
-flexible y el padre del header es body */
+.btn__started > button {
+  border: none;
+  outline: none;
+  background-color: var(--color-naranja);
+  color: var(--plomo-claro);
+  width: 150px;
+  height: 40px;
+  border-radius: 30px;
+  box-shadow: var(--color-naranja) 0px 2px 10px;
+}
+
+/* ---- HEADER ----*/
 .header {
-  /* maxwidth porque no todas las pantallas
-    tienen la misma resolucion.  */
   max-width: var(--ancho);
-  width: var(--ancho);
   display: flex;
   margin: 0 auto;
   height: 60px;
@@ -69,9 +60,6 @@ flexible y el padre del header es body */
   align-items: center;
 }
 .header__item {
-  /* no usamos un justify: space eveling
-    porque lositem se separarian hasta los extremos del nav */
-
   margin: 0 20px;
 }
 .header__link {
@@ -87,231 +75,213 @@ flexible y el padre del header es body */
 }
 .header__nav {
   flex: 1;
-  /* lo haremos flex para que su hijo lista
-    ocupe toda la altura y en lista le damos 
-    flex:1;*/
   display: flex;
 }
 .header__btn {
-
 }
 
+/* ----- HEADER ----- */
 
-/* -----FIN HEADER---- */
+/* ----- MAIN -----*/
 
-/* ------MAIN---- */
-main {
-
-}
 .principal {
   max-width: var(--ancho);
   display: flex;
-  /* usamos margin para centrar porque el main tiene
-    que estar centrado y su padre es body y body no es flex
- */
-  margin: 100px auto 0px auto;
+  margin: 100px auto 0 auto;
   flex-wrap: wrap;
-
 }
 .principal section {
   width: 50%;
-  /* border: 1px solid black; */
 }
-.section1 {
-    /* flex para que el h1 el p y el boton esten uno
-    debajo de otro */
+
+.seccion1 {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
-/* section1 >* :todos los hijos del setion1
-tendran : */
-.section1 > * {
-    margin-bottom: 40px;
-
+.seccion1 > * {
+  margin-bottom: 40px;
 }
-
-.section1__titulo {
+.seccion1__titulo {
   color: var(--color-azul-oscuro);
   font-size: 4rem;
   line-height: 4.2rem;
 }
-.section1__parrafo {
-    color: var(--color-azul-claro);
-    width: 70%;
+.seccion1__parrafo {
+  color: var(--color-azul-claro);
+  width: 50%;
 }
-.section2 {
-  display:flex;
+.seccion2 {
+  display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
-.section2 img {
-  flex:1;
+
+.seccion2 img {
   width: 100%;
   max-width: 550px;
 }
-.section3 {
+
+.seccion3 {
   margin-top: 80px;
 }
-.section3 * {
+
+.seccion3 > * {
   margin-bottom: 40px;
 }
-.section3__titulo{
-  color:var(--color-azul-oscuro);
+
+.seccion3__titulo {
+  color: var(--color-azul-oscuro);
   font-size: 3rem;
   line-height: 3.2rem;
 }
-.section3__parrafo{
-  color:var(--color-azul-claro);
-  width: 70%;
+.seccion3__parrafo {
+  color: var(--color-azul-claro);
+  width: 50%;
+}
 
+.seccion4 {
+  margin-top: 80px;
 }
-.section4 {
-  margin-top:80px;
+
+.seccion4__media {
+  display: flex;
+  margin-bottom: 40px;
 }
-.section4__media {
-  display:flex;
-  margin-bottom:40px;
-}
-.section4__numero {
+
+.seccion4__numero {
   color: white;
   background-color: var(--color-naranja);
   height: 45px;
   width: 80px;
   border-radius: 25px;
   text-align: center;
-  /* line-height: 40px; */
+  line-height: 40px;
+  font-weight: 500;
 }
-.section4__texto {
-  flex:1;
-  /* margin-left:40px; mejor el damos paddin */
+.seccion4__texto {
+  flex: 1;
   padding: 8px 160px 8px 20px;
 }
-.section4__titulo {
-  color:var(--color-azul-oscuro);
-  margin-bottom:20px;
+
+.seccion4__titulo {
+  color: var(--color-azul-oscuro);
+  margin-bottom: 20px;
 }
-.section4__parrafo {
-  color:var(--color-azul-claro);
-  line-height:1.6rem;
+.seccion4__parrafo {
+  color: var(--color-azul-claro);
+  line-height: 1.6rem;
 }
 
 .testimonios {
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 80px;
 }
+
 .testimonios__titulo {
-  color:var(--color-azul-oscuro);
+  color: var(--color-azul-oscuro);
   font-size: 3rem;
 }
+
 .cards {
-  display:flex;
+  display: flex;
   margin-top: 130px;
 }
 .card {
-  background-color: var(--color-plomo-claro);
-  flex:1;
-  margin:0 10px;
-  padding:0 40px 40px 40px;
+  background-color: var(--plomo-claro);
+  flex: 1;
+  margin: 0 10px;
+  padding: 0 40px 40px 40px;
   text-align: center;
 }
 .card__imagen {
-  width:100px;
-  height:100px;
-  /* left: 50%; */
-  /* para mvoer la iamgen hacia arriba */
-  transform: translate(0%,-50%);
-
+  width: 100px;
+  height: 100px;
+  transform: translate(0, -50%);
 }
 .card__titulo {
-  color:var(--color-azul-oscuro);
+  color: var(--color-azul-oscuro);
   margin-bottom: 20px;
 }
-
 .card__parrafo {
-  color:var(--color-azul-claro);
-  line-height: 1.4rem;
+  color: var(--color-azul-claro);
+  line-height: 1.5rem;
 }
-/* ----FIN MAIN---- */
-/* responsive */
-@media screen and (max-width:1440px){
+
+/* ----- MAIN -----*/
+
+@media screen and (max-width: 1440px) {
   .principal {
     padding: 0 100px;
   }
 }
 
-@media screen and (max-width: 1200px){
-  .section1__parrafo,
-  .section3__parrafo{
+@media screen and (max-width: 1200px) {
+  .seccion1__parrafo,
+  .seccion3__parrafo {
     width: 80%;
   }
-  .section4__texto{
+  .seccion4__texto {
     padding: 8px 40px 8px 20px;
   }
-
 }
-@media screen and (max-width:950px){
-  .principal{
+
+@media screen and (max-width: 950px) {
+  .principal {
     flex-direction: column;
   }
-  .principal__section {
-    width:100%;
+  .principal section {
+    width: 100%;
   }
-  /* order: elementos flexibles para la as imagenes
-  en movil salgan primero: */
-  .section1{
-    order:2;
-    text-align:center;
-
+  .seccion1 {
+    order: 2;
+    text-align: center;
   }
 
-  /* agregaremos margin para centrar 
-  al boton */
-  .section1 .btn__started {
-    margin:0 auto;
-  
+  .seccion1 .btn__started {
+    margin: 0 auto;
   }
   .btn__started-left {
     justify-content: center;
   }
-
-  .section1__parrafo {
-    width:100%;
+  .seccion1__parrafo {
+    width: 100%;
   }
-  .section2{
-    order:1;
 
-
+  .seccion2 {
+    order: 1;
   }
-  .section3{
-    order:3;
-    text-align:center;
-
+  .seccion3 {
+    order: 3;
+    text-align: center;
   }
-  .section3__parrafo{
-    width:100%;
+  .seccion3__parrafo {
+    width: 100%;
   }
-  .section4{
-    order:4;
-    margin-top:20px;
-
+  .seccion4 {
+    order: 4;
+    margin-top: 20px;
   }
-  .section4__titulo {
-    background-color:var(--color-rosado);
+  .seccion4__titulo {
+    background-color: var(--color-rosado);
     height: 45px;
     padding-left: 80px;
     padding-top: 6px;
-    
   }
-  .section4__media {
+  .seccion4__media {
     position: relative;
   }
-  .section4__numero {
-    position:absolute;
-    top:8px;
-    left: 0px;
+  .seccion4__numero {
+    position: absolute;
+    top: 8px;
+    left: 0;
   }
+}
 
-
+@media screen and (max-width:720px){
+  .principal{
+    padding: 0 20px;
+  }
 }
